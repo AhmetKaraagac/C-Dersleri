@@ -1,0 +1,137 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace iienstitü
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "iienstütü C# Ödevi";
+
+        tekrarla:
+            try
+           {   
+            Console.WriteLine("***** Aritmetik dört iþlem yapma programý *****\n");
+
+            Console.Write("Birinci sayýyý giriniz: ");
+            int sayý1 = int.Parse(Console.ReadLine());
+            Console.Write("Ýkinci sayýyý giriniz: ");
+            int sayý2 = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.Clear();
+            Console.WriteLine("***** Aritmetik dört iþlem yapma programý *****\n");
+
+            Console.WriteLine("Yapmak istediginiz iþlemi seçin");
+            Console.WriteLine("     1-Toplama");
+            Console.WriteLine("     2-Çýkarma");
+            Console.WriteLine("     3-Çarpma");
+            Console.WriteLine("     4-Bölme");
+
+            char islem = char.Parse(Console.ReadLine());
+
+            if (islem=='1' || islem=='t' || islem=='+')
+            {
+                Console.WriteLine(sayý1+"+"+sayý2+"= "+(sayý1+sayý2));
+                    Console.WriteLine();
+
+                    Console.Write("iþlemi tekrar yapmak isyormusunuz? e/h : ");
+                    
+                    char tekrar = char.Parse(Console.ReadLine());
+                    Console.Clear();
+
+                    if (tekrar == 'e' || tekrar == 'E')
+                    {
+                        goto tekrarla;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Oturum kapatýlýyor");
+                    }
+            }
+            else if (islem=='-' || islem=='2')
+            {
+                Console.WriteLine(sayý1 + "-" + sayý2 + "= " + (sayý1 - sayý2));
+                    Console.WriteLine();
+
+                    Console.Write("iþlemi tekrar yapmak isyormusunuz? e/h : ");
+
+                    char tekrar = char.Parse(Console.ReadLine());
+                    Console.Clear();
+
+                    if (tekrar == 'e' || tekrar == 'E')
+                    {
+                        goto tekrarla;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Oturum kapatýlýyor");
+                    }
+            }
+            else if (islem == '*' || islem == '3')
+            {
+                Console.WriteLine(sayý1 + "*" + sayý2 + "= " + (sayý1 * sayý2));
+                    Console.WriteLine();
+
+                    Console.Write("iþlemi tekrar yapmak isyormusunuz? e/h :");
+                    char tekrar = char.Parse(Console.ReadLine());
+                    Console.Clear();
+
+                    if (tekrar == 'e' || tekrar == 'E')
+                    {
+                        goto tekrarla;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Oturum kapatýlýyor");
+                    }
+            }
+            else if (islem == '/' || islem == '4')
+            {
+                Console.WriteLine(sayý1 + "/" + sayý2 + "= " + (sayý1 / sayý2));
+                    Console.WriteLine();
+
+                    Console.Write("iþlemi tekrar yapmak isyormusunuz? e/h :");
+                    char tekrar = char.Parse(Console.ReadLine());
+                    Console.Clear();
+
+                    if (tekrar == 'e' || tekrar == 'E')
+                    {
+                        goto tekrarla;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Oturum kapatýlýyor");
+                    }
+            }
+            else
+            {
+                Console.WriteLine("Lütfen iþlemlerden birini giriniz");
+            }
+               
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Yanlýþ iþlem yaptýnýz");
+                Console.WriteLine("iþlemi tekrar yapmak isyormusunuz? e/h ");
+                char tekrar = char.Parse(Console.ReadLine());
+
+                if (tekrar=='e' || tekrar=='E')
+                {
+                    goto tekrarla;
+                }
+                else
+                {
+                    Console.WriteLine("Oturum kapatýlýyor");
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
